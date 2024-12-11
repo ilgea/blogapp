@@ -1,7 +1,6 @@
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import { Avatar, Typography } from "@mui/material";
-import blogPng from "../assets/blok.png";
 import placeholder from "../assets/placeholder.png";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
