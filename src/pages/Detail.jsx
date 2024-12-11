@@ -104,6 +104,9 @@ const Detail = () => {
                   fontSize: ".9rem",
                   letterSpacing: ".2px",
                   lineHeight: "1.4rem",
+                  whiteSpace: "pre-wrap",
+                  wordBreak: "break-word",
+                  padding:0.5
                 }}
               >
                 {selectedBlog?.content}
