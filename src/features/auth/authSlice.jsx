@@ -49,7 +49,7 @@ export const registerUser = createAsyncThunk(
 
 export const loginUser = createAsyncThunk(
   "auth/loginUser",
-  async ({ email, password }) => {
+  async ({ email, password },{ rejectWithValue }) => {
     try {
       const { user } = await signInWithEmailAndPassword(auth, email, password);
 
@@ -69,6 +69,7 @@ export const loginUser = createAsyncThunk(
       } else {
         toastErrorNotify(error.code);
       }
+      return rejectWithValue(error.message); // koymadığında, bir hatalı giriş denemesinde loading true olarak kalıyor.
     }
   }
 );
