@@ -57,7 +57,7 @@ const BlogForm = ({
       <TextField
         margin="normal"
         id="title"
-        label="Title *"
+        label="Başlık *"
         name="title"
         autoFocus
         fullWidth
@@ -73,7 +73,7 @@ const BlogForm = ({
       <TextField
         margin="normal"
         id="image"
-        label="Image URL *"
+        label="Resim URL *"
         type="text"
         name="imageURL"
         fullWidth
@@ -101,11 +101,11 @@ const BlogForm = ({
         <Button
           onClick={handleUploadFile}
           variant="contained"
-          sx={{ width: "9rem", backgroundColor: "buttonBg.main" }}
+          sx={{ width: "6rem", backgroundColor: "buttonBg.main" }}
           size="small"
           disabled={isUploading || uploadedImage?.size > 521000}
         >
-          {isUploading ? "Uploading..." : "Upload image"}
+          {isUploading ? "Yükleniyor..." : "Resmi yükle"}
         </Button>
       </Box>
 
@@ -121,7 +121,7 @@ const BlogForm = ({
       <TextField
         margin="normal"
         id="outlined-textarea"
-        label="Content *"
+        label="İçerik *"
         name="content"
         type="text"
         fullWidth
@@ -140,7 +140,7 @@ const BlogForm = ({
         size="large"
         sx={{ mt: 3, textTransform: "none" }}
       >
-        {pathname !== "/new-blog" ? "Update" : "Add Blog"}
+        {pathname !== "/new-blog" ? "Güncelle" : "Blog Ekle"}
       </LoadingButton>
     </form>
   );
