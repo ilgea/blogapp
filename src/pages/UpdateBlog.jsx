@@ -1,7 +1,7 @@
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import { Avatar, Typography } from "@mui/material";
-import blogPng from "../assets/blok.png";
+import placeholder from "../assets/placeholder.png";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
@@ -66,13 +66,13 @@ const UpdateBlog = () => {
           }}
         >
           <img
-            src={blogPng}
-            style={{ maxWidth: "90%", maxHeight: "90%" }}
+            src={placeholder}
+            style={{ maxWidth: "100%", maxHeight: "100%" }}
             alt="candela"
           />
         </Avatar>
         <Typography variant="h4" align="center" mt={2} color="primary.main">
-          Update Blog
+          Bloğu Güncelle
         </Typography>
         <BlogForm
           handleChange={handleChange}
