@@ -97,20 +97,43 @@ const Detail = () => {
                 {selectedBlog?.title}
               </Typography>
 
-              <Typography
+              {/* blog içi satır boşluklarını ayarlama */}
+              {selectedBlog?.content.split("\n").map((line, index) => (
+                <Typography
+                  key={index}
+                  gutterBottom
+                  variant="body2"
+                  sx={{
+                    fontSize: ".9rem",
+                    letterSpacing: ".2px",
+                    lineHeight: "1.2rem",
+                    whiteSpace: "pre-wrap",
+                    wordBreak: "break-word",
+                    padding: 0.5,
+                    marginBottom: line.trim() === "" ? 0 : 0,
+                  }}
+                >
+                  {line}
+                </Typography>
+              ))}
+
+
+              {/* <Typography
                 gutterBottom
                 variant="body2"
                 sx={{
                   fontSize: ".9rem",
                   letterSpacing: ".2px",
-                  lineHeight: "1.4rem",
+                  lineHeight: "1.2rem",
                   whiteSpace: "pre-wrap",
                   wordBreak: "break-word",
                   padding:0.5
                 }}
               >
                 {selectedBlog?.content}
-              </Typography>
+              </Typography> */}
+
+
             </CardContent>
             <CardPostedActions blog={selectedBlog} />
             <CardCommentSection
