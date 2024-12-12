@@ -61,10 +61,12 @@ Project aims to create a Blog App.
 ## Expected Outcome
 
 <p align="center">
-<a href=""><video src="https://github.com/ilgea/blogapp/main/blogapp.mp4" width="100%" alt="blogapp">
-</video></a>
+<a href="">
+<!--   <video src="https://github.com/ilgea/blogapp/main/blogapp.mp4" width="100%" alt="blogapp">
+</video> -->
+  [Video İzle](https://github.com/ilgea/blogapp/raw/main/blogapp.mp4)
+</a>
 </p>
-"https://github.com/ilgea/blogapp/main/blogapp.mp4"
 
 ## Link
 <p align="left">
