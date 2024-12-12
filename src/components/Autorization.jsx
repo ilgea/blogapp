@@ -17,19 +17,32 @@ import {
 } from "../features/auth/authSlice";
 import LoadingButton from "@mui/lab/LoadingButton";
 
-const ValidationSchema = yup.object().shape({
-  email: yup.string().email("Invalid email address").required("Required"),
-  password: yup
-    .string()
-    .required("Required")
-    .min(8, "Password must have min 8 chars")
-    .max(16, "Password must have max 16 chars"),
-  name: yup
-    .string()
-    .min(3, "Too Short!")
-    .max(20, "Too Long!")
-    .required("Required"),
-});
+const getValidationSchema = (method) => {
+  if (method === "Register") {
+    return yup.object().shape({
+      name: yup
+        .string()
+        .min(3, "Too Short!")
+        .max(20, "Too Long!")
+        .required("Required"),
+      email: yup.string().email("Invalid email address").required("Required"),
+      password: yup
+        .string()
+        .required("Required")
+        .min(8, "Password must have min 8 chars")
+        .max(16, "Password must have max 16 chars"),
+    });
+  } else {
+    return yup.object().shape({
+      email: yup.string().email("Invalid email address").required("Required"),
+      password: yup
+        .string()
+        .required("Required")
+        .min(8, "Password must have min 8 chars")
+        .max(16, "Password must have max 16 chars"),
+    });
+  }
+};
 
 // Formik'den gelen her türlü veriyi almak için props kullanıyoruz.
 const LoginAndRegisterForm = (props) => {
@@ -168,7 +181,7 @@ const Autorization = ({ method }) => {
               email: "",
               password: "",
             }}
-            validationSchema={ValidationSchema}
+            validationSchema={getValidationSchema(method)}
             // values -> form'dan gelen değerler, mail'in, password'un değerleri.
             // actions -> form submit edildi mi?, form resetlensin mi?
             // formik ile gelen bir sürü özelliği kullanmayı sağlayan bu parametredir.
