@@ -64,7 +64,7 @@ Project aims to create a Blog App.
 <a href=""><video src="https://github.com/ilgea/blogapp/main/blogapp.mp4" width="100%" alt="blogapp">
 </video></a>
 </p>
-https://github.com/ilgea/blogapp/main/blogapp.mp4
+"https://github.com/ilgea/blogapp/main/blogapp.mp4"
 
 ## Link
 <p align="left">
