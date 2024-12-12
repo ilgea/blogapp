@@ -65,7 +65,6 @@ Project aims to create a Blog App.
 </p>
 
 ## Link
-
 <p align="left">
 <b>Check The Live Website ➡️</b> <a href="https://blogcu.netlify.app/">Live Website</a>
 </p>
