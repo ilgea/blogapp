@@ -9,7 +9,7 @@ import { useState } from "react";
 import { IoChatboxOutline } from "react-icons/io5";
 import { MdFavorite } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleLike } from "../features/blog/blogSlice";
+import { fetchBlogs, toggleLike } from "../features/blog/blogSlice";
 import { toastErrorNotify } from "../utils/ToastNotify";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ref, remove } from "firebase/database";
@@ -46,6 +46,7 @@ const CardCommentSection = ({ blog, handleBLogUpdate }) => {
       setLoading(false);
       toastSuccessNotify("Blog silindi");
       setOpen(false);
+      dispatch(fetchBlogs())
       navigate("/");
     } catch (error) {
       setLoading(false);
