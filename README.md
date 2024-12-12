@@ -61,9 +61,7 @@ Project aims to create a Blog App.
 ## Expected Outcome
 
 <p align="center">
-<a href=""><video controls width="100%" alt="blogapp">
-<source src="blogapp.mp4" type="video/mp4" />
-</video></a>
+<a href=""><img src="blogapp.gif" alt="screenshot"></a>
 </p>
 
 ## Link
