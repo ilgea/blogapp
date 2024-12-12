@@ -32,7 +32,9 @@ const Profile = () => {
   const handleUsernameUpdate = () => {
     setIsNameUploading(true);
     if (newUsername.length < 3) {
-      toastErrorNotify("Kullanıcı adı en az 3 karakter olmalıdır");
+      toastErrorNotify(
+        "Kullanıcı adı en az 3 karakterli olmalıdır"
+      );
       setIsNameUploading(false);
       return;
     }
@@ -228,6 +230,8 @@ const Profile = () => {
                   },
                 },
                 htmlInput: {
+                  minLength: 3,
+                  maxLength: 20,
                   // input'in stili
                   sx: {
                     padding: 0.5, // input içindeki boşluğu küçülttük.
@@ -240,6 +244,7 @@ const Profile = () => {
                   },
                 },
               }}
+              helperText="En az 3, en fazla 20 karakter giriniz"
               size="small"
               fullWidth
               name="username"
