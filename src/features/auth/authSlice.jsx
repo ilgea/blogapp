@@ -33,8 +33,7 @@ export const registerUser = createAsyncThunk(
         email: user.email,
         photoURL: user.photoURL || null,
       };
-          
-      toastSuccessNotify("Kayıt Başarılı");
+      toastSuccessNotify(`Kayıt Başarılı, Hoşgeldiniz ${user?.displayName}`);
       return userData;
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
