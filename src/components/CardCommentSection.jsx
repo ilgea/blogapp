@@ -45,8 +45,8 @@ const CardCommentSection = ({ blog, handleBLogUpdate }) => {
       await remove(ref(db, "blogs/" + id));
       setLoading(false);
       toastSuccessNotify("Blog silindi");
-      setOpen(false);
       dispatch(fetchBlogs())
+      setOpen(false);
       navigate("/");
     } catch (error) {
       setLoading(false);
