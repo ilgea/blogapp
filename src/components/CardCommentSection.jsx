@@ -60,7 +60,7 @@ const CardCommentSection = ({ blog, handleBLogUpdate }) => {
 
   const handleLikeClick = () => {
     if (!user) {
-      toastErrorNotify("Please login to like this blog.");
+      toastErrorNotify("Lütfen giriş yapınız.");
       navigate("/login");
       return;
     }
