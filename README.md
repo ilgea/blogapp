@@ -62,7 +62,7 @@ Project aims to create a Blog App.
 
 <p align="center">
 <a href=""><video controls width="100%" alt="blogapp">
-<source src="blogapp.mp4" type="video/mp4" />
+<source src="./blogapp.mp4" type="video/mp4" />
 </video></a>
 </p>
 
