@@ -1,14 +1,14 @@
 import Typography from "@mui/material/Typography";
 import userholder from "../assets/userholder.png";
 import { useDispatch, useSelector } from "react-redux";
-import { Avatar, Box,  Paper, TextField } from "@mui/material";
+import { Avatar, Box, Paper, TextField } from "@mui/material";
 import { theme } from "../utils/theme";
 import { useState } from "react";
 import { toastErrorNotify, toastSuccessNotify } from "../utils/ToastNotify";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { auth, storage } from "../utils/firebaseUtil";
 import { v4 } from "uuid";
-import {  updateProfile } from "firebase/auth";
+import { updateProfile } from "firebase/auth";
 import {
   blogProfilAvatarUpdate,
   blogProfilNameUpdate,
@@ -31,11 +31,16 @@ const Profile = () => {
   //! Add function to handle displayName update
   const handleUsernameUpdate = () => {
     setIsNameUploading(true);
+    if (newUsername.length < 3) {
+      toastErrorNotify("Kullanıcı adı en az 3 karakter olmalıdır");
+      setIsNameUploading(false);
+      return;
+    }
     updateProfile(auth.currentUser, { displayName: newUsername })
       .then(() => {
         setCurrentUserName(newUsername); // Update local state
 
-        // Update Redux state 
+        // Update Redux state
         const updatedUser = {
           displayName: newUsername,
           email: user?.email, // Mevcut email bilgisini koruyoruz
