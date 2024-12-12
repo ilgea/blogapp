@@ -19,14 +19,16 @@ import LoadingButton from "@mui/lab/LoadingButton";
 
 const ValidationSchema = yup.object().shape({
   email: yup.string().email("Invalid email address").required("Required"),
-  password: yup.string().required("Required"),
-  // .min(8, "Password must have min 8 chars")
-  // .max(16, "Password must have max 16 chars"),
-  // name: yup
-  //   .string()
-  //   .min(3, "Too Short!")
-  //   .max(20, "Too Long!")
-  //   .required("Required"),
+  password: yup
+    .string()
+    .required("Required")
+    .min(8, "Password must have min 8 chars")
+    .max(16, "Password must have max 16 chars"),
+  name: yup
+    .string()
+    .min(3, "Too Short!")
+    .max(20, "Too Long!")
+    .required("Required"),
 });
 
 // Formik'den gelen her türlü veriyi almak için props kullanıyoruz.
@@ -48,9 +50,9 @@ const LoginAndRegisterForm = (props) => {
           label="Kullancı ismi"
           name="name"
           type="text"
-          // Aşağıdaki autoComplete alanlarını kapattım. 
+          // Aşağıdaki autoComplete alanlarını kapattım.
           // Çünkü tarayıcı uzantılarını tetikliyor. background.js:2'de bir çok uyarı veriyor. Uygulama ile direk ilgisi yok. Ama kapatınca çözüldü.
-          // autoComplete="name" 
+          // autoComplete="name"
           autoFocus
           onChange={handleChange}
           placeholder="Kullancı isminizi giriniz"
