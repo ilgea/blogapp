@@ -60,9 +60,9 @@ Project aims to create a Blog App.
 
 ## Expected Outcome
 
-<p align="center">
-<a href=""><img src="blogapp.gif" alt="screenshot"></a>
-</p>
+<video src="https://github.com/user-attachments/assets/83af235d-a72b-490d-87f6-013ba117024d" alt="screenshot" controls="controls" style="max-width: 730px;">
+</video>
+
 
 ## Link
 <p align="left">
